@@ -1,15 +1,18 @@
 package com.example.demo.repository;
 
 import com.example.demo.model.Document;
-import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.time.LocalDate;
 import java.util.List;
+import java.util.Optional;
 
-public interface DocumentRepository extends JpaRepository<Document, Long> {
+public interface DocumentRepository {
 
-    List<Document> findByNumber(String number);
-    List<Document> findByDate(LocalDate date);
-    List<Document> findByType(String type);
-
+    Optional<Document> findByNumber(String number);
+    Optional<Document> findByDate(LocalDate date);
+    Optional<Document> findByType(String type);
+    List<Document> findAllDocument();
+    Document updateDocument(Document document);
+    Document saveDocument(Document document);
+    void deleteDocument(String number);
 }

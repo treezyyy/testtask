@@ -1,8 +1,10 @@
 package com.example.demo.model;
 
 import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
+
 import java.time.LocalDate;
 
 
@@ -10,11 +12,11 @@ import java.time.LocalDate;
 @Builder
 @Entity
 @Table(name = "Document")
+@AllArgsConstructor
 public class Document {
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy=GenerationType.IDENTITY)
     private Long id;
-    @Column(unique = true)
     private String number;
     private LocalDate date;
     private String type;
