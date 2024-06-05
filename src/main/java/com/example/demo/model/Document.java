@@ -2,17 +2,17 @@ package com.example.demo.model;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
-import lombok.Builder;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import java.time.LocalDate;
 
 
 @Data
-@Builder
 @Entity
 @Table(name = "Document")
 @AllArgsConstructor
+@NoArgsConstructor
 public class Document {
     @Id
     @GeneratedValue(strategy=GenerationType.IDENTITY)
